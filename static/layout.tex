@@ -1,0 +1,37 @@
+%*******************************************************
+% Layout
+%*******************************************************
+%\automark[section]{chapter} 	% chapter-klasses default
+%\automark[subsection]{section}	% others default
+%
+\clearscrheadfoot% scrheadings und scrplain komplett leeren
+%% Kopfzeile
+%% --- \leftmark \rightmark \headmark \pagemark ---
+%\lehead []{} 			% left aligned even headings
+%\cehead []{} 			% centered even headings
+%\rehead []{} 			% right aligned even headings
+%\lohead []{} 			% left aligned odd headings
+%\cohead []{} 			% centered odd headings
+%\rohead []{} 			% right aligned odd headings
+\ihead []{} 				% inside headings
+\chead []{} 				% centered headings
+\ohead []{\headmark} 		% outside headings
+%% Fusszeile
+%\lefoot []{} 			% left aligned even headings
+%\cefoot []{} 			% centered even headings
+%\refoot []{} 			% right aligned even headings
+%\lofoot []{} 			% left aligned odd headings
+%\cofoot []{} 			% centered odd headings
+%\rofoot []{} 			% right aligned odd headings
+\ifoot [\mytitle]{\mytitle} 		% inside headings
+\cfoot []{} 				% centered headings
+\ofoot [\pagemark]{\pagemark} 		% outside headings
+\pagestyle {scrheadings} %Stil der Kopf- und Fuzeilen
+%
+\addtokomafont {captionlabel} {\sffamily\bfseries} %Unterschriftentitel fett und serifenlos
+\setcapindent {1em} %hngender Einzug ab zweiter Zeile
+%
+\renewcommand {\thefigure} {\thesection.\arabic{figure}} %Sektionsnummer mit in Abbildungsnummer
+\numberwithin {figure} {section} %Abbildungsnummer mit jeder Sektion zurcksetzen
+%
+\geometry{a4paper, top=27mm, left=30mm, right=20mm, bottom=35mm, headsep=10mm, footskip=12mm}

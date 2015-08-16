@@ -1,0 +1,97 @@
+\documentclass [
+%	draft=true, 					%% Entwurfsstadium
+%	final, 							%% fertiges Dokument
+	fontsize=12pt, 					%% Schriftgroesse
+	a4paper, 						%% Papiergroesse
+%	titlepage=true, 				%% Titelseite auf extra Seite
+	oneside, openany, 				%% 
+%	twoside, openright, 			%%
+%%------------------------------------------------------------------------------
+%% Parameter fuer Verzeichnisse:
+%%------------------------------------------------------------------------------ 
+	toc=bibliography, 				%% Bibliographie ins TOC
+%	toc=bibliographynumbered, 		%% Bibliographie im TOC nummeriert
+%	toc=chapterentrywithdots, 		%% Kapiteleintrag, Seitenzahl mit Punktlinie
+%	toc=chapterentrywithoutdots, 	%% Kapiteleintrag, Seitenzahl ohne Punktlinie
+%	toc=flat, 						%% TOC in tabelarischer Form
+%	toc=graduated, 					%% TOC in hierarchischer Form
+%	toc=numberline, 				%% buendig mit nummeriertem Eintrag
+%	toc=nonumberline, 				%% buendig mit Nummer
+	toc=index, 						%% Index ins TOC (idxtotoc)
+	toc=listof, 					%% Abbildungs- und das Tabellenverzeichnis
+%	toc=listofnumbered, 			%% Abbildungs- und das Tabellenverzeichnis mit Nummer
+%	toc=sectionentrywithdots, 		%% Abschnittseintrag mit Punktlinie
+%	toc=sectionentrywithoutdots, 	%% Abschnittseintrag ohne Punktlinie
+%%------------------------------------------------------------------------------
+%	chapterprefix=true, 			%% Default: false
+%	appendixprefix=true, 			%% Default: false
+] {scrreprt} 					%% Dokumentklasse [scrartcl|scrreprt|scrbook]
+%%==============================================================================
+%% Document metadata
+%%==============================================================================
+%% general metadata:
+\newcommand{\myname}{Max Mustermann}
+\newcommand{\mymail}{\href{mailto:Max.Mustermann@example.com}{Max.Mustermann@example.com}}
+\newcommand{\myauthor}{\myname \\\mymail} 
+\newcommand{\mytitle}{TITLE}  		%% also used for PDF metadata (hyperref)
+\newcommand{\mysubject}{SUBJECT} 	%% also used for PDF metadata (hyperref)
+\newcommand{\mykeywords}{KEYWORDS} 	%% also used for PDF metadata (hyperref)
+\newcommand{\mypdfauthor}{\myname}	%% used for PDF metadata (hyperref)
+%
+\newcommand{\myerstpruefer}{Prof. Dr. Pruefer} 			%% used in Titlepage
+\newcommand{\myzweitpruefer}{Prof. Dr. Zweitpruefer} 	%% used in Titlepage
+\newcommand{\myabgabedatum}{\today} 					%% used in Titlepage and PDF metadata (hyperref)
+%
+\input{static/packages} 	% Pakete einbinden
+\input{static/layout} 		% Layout
+\input{static/commands} 	% Befehle einbinden
+\input{static/pdf-options} 	% hyperref pdf-Optionen
+\input{static/maketitle} 	% options for maketitle
+\input{static/listings} 	% Listings
+%
+%%==============================================================================
+%% Document content 
+%%==============================================================================
+\begin {document} % hier beginnt das eigentliche Dokument
+\selectlanguage{ngerman}
+%*****************************************
+% Frontmatter
+%*****************************************
+\frontmatter 								%% scrbook only
+%\maketitle
+\input{FrontBackmatter/Titlepage} 			%% alternative zu \maketitle
+\begin{abstract} 							%% [scrartcl|scrreprt] only
+\input{FrontBackmatter/Abstract}
+\end{abstract} 								%% [scrartcl|scrreprt] only
+\input{FrontBackmatter/Contents}
+\clearpage
+\input{FrontBackmatter/Acronyms}
+%
+%*****************************************
+% Mainmatter
+%*****************************************
+\mainmatter 								%% scrbook only
+\renewcommand{\thesection}{\thechapter .\arabic{section}} % Nummeriert Kapitel.Section.Subsection
+%\cleardoublepage\include{Sections/Section01}
+%\cleardoublepage\include{Sections/Section02}
+%\cleardoublepage\include{Sections/Section03}
+%
+%*****************************************
+% Backmatter
+%*****************************************
+\backmatter 								%% scrbook only
+\bookmarksetup{startatroot}
+\begin{appendices}
+%\include{Sections/Anhang}
+
+\end{appendices}
+%----Literaturverzeichnis-------------%
+\bibliographystyle{dinat} % Literaturverzeichnis nach DIN 1505; [alphadin|natdin|dinat|dcu]
+\bibliography{bib}
+\pagebreak
+%----Index----------------------------%
+\printindex
+%
+\cleardoublepage\include{FrontBackmatter/Declaration}
+%
+\end{document} %hier endet das eigentliche Dokument

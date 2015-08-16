@@ -1,0 +1,83 @@
+% ** Packages ***************************************
+\usepackage {fixltx2e} %korrigiert einige Probleme in LaTeX
+\usepackage {fix-cm} %Behebung von Fehlern in den Standard-Schriften
+%\usepackage [ansinew] {inputenc} %Benutzung von Umlauten und Sonderzeichen im Quelltext (Windows-Codierung)
+\usepackage [utf8]{inputenc} %Benutzung von Umlauten und Sonderzeichen im Quelltext (Mac-Codierung)
+\usepackage [T1] {fontenc} %Zeichenbelegung der verwendeten Ausgabeschrift
+\usepackage {textcomp} %Sonderzeichen
+%
+\usepackage [english, ngerman] {babel} %Sprachuntersttzung
+%
+\usepackage {graphicx} %Graphik-Paket
+%
+\usepackage {fixmath} %internationaler Standard fr mathematische Formeln
+\usepackage {amsmath} %erweiterter Mathematik-Modus
+\usepackage {amssymb} %mathematische Symbole
+%
+\usepackage[
+	draft=false,
+	automark, 			% 
+	autooneside, 		% fuer einseitigen Druck
+	footsepline, 		% Linie oberhalb Fusszeile
+	headsepline, 		% Linie unterhalb Kopfzeile
+	plainheadsepline, 	% Linie unterhalb Kopfzeile auf Kapitelanfangsseiten
+	plainfootsepline, 	% Linie oberhalb Fusszeile auf Kapitelanfangsseiten
+	]{scrlayer-scrpage} % Formatierung der Kopf- und Fuzeilen
+%
+\usepackage{geometry} % Seitenlayout veraendern
+%
+\usepackage[
+	draft=false,
+]{hyperref} %pdf-Optionen
+%
+\usepackage[
+	draft=false,
+]{bookmark}
+%
+\usepackage{verbatim} %Verbatim-Umgebung nutzen
+\usepackage{listings} %Package fuer Quellcodelistings
+\usepackage[ %
+%	toc, 		% puts a header into ToC
+%	page, 		% puts a title into document
+%	titletoc, 	% adds 'Appendix' prefix to titles in ToC
+%	header, 	% adds 'Appendis' prefix to pageheaders
+]{appendix} 	% Package for \begin{appendices}
+%
+\usepackage{url} 		% for some natbib styles
+\usepackage[ %
+	round, 				% (default) for round parentheses
+%	square, 			% for square brackets
+%	curly, 				% for curly braces
+%	angle, 				% for angle brackets
+	semicolon, 			% (default) to separate multiple citations with semi-colons
+%	comma, 				% to use commas as separators
+	authoryear, 		% (default) for author-year citations
+%	numbers, 			% for numerical citations
+%	super,				% for superscripted numerical citation, as in Nature
+%	sort, 				% orders multiple citations into the sequence in which they appear in the list of references
+%	sort&compress, 		% as sort but in addition multiple numerical citations are compressed if possible (as 3-6, 15)
+%	compress, 			% to compress without sorting
+%	sectionbib, 		% redefines \thebibliography to issue \section* instead of \chapter*; 
+%	nonamebreak, 		% keeps all author's names in a citation on one line
+]{natbib}				% Natural Sciences Citations and References
+%
+\usepackage[ %
+	autostyle=true, 	% default: tryonce
+	german=quotes, 		% syle variants for german: quotes, guillements, swiss
+	english=british, 	% syle variants for english: american, british
+	french=quotes, 		% syle variants for french: quotes, quotes*, guillements, guillements*
+%	maxlevel=2, 		% default: 2
+%	threshold=3, 		% default: 3
+	]{csquotes}
+%
+\usepackage{relsize} 	% requiered by acronym option smaller
+\usepackage[
+	printonlyused, 		%
+%	footnote, 			% makes the full name apear as footnote
+%	withpage, 			% marker which tells to print page numbers
+%	smaller				% lets acronyms appear a bit smaller than surrounding text
+	]{acronym} 			% 
+%
+\usepackage{makeidx} 	% 
+%
+\usepackage{array} % for Titlepage
