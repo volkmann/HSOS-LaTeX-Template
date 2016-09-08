@@ -1,4 +1,32 @@
-\input{static/documentclassoptions}
+\documentclass [
+%	draft=true, 					%% Entwurfsstadium
+%	final, 							%% fertiges Dokument
+	fontsize=12pt, 					%% Schriftgroesse
+	a4paper, 						%% Papiergroesse
+%	titlepage=true, 				%% Titelseite auf extra Seite
+	oneside, openany, 				%% 
+%	twoside, openright, 			%%
+%%------------------------------------------------------------------------------
+%% Parameter fuer Verzeichnisse:
+%%------------------------------------------------------------------------------
+	toc=bibliography, 				%% Bibliographie ins TOC
+%	toc=bibliographynumbered, 		%% Bibliographie im TOC nummeriert
+%	toc=chapterentrywithdots, 		%% Kapiteleintrag, Seitenzahl mit Punktlinie
+%	toc=chapterentrywithoutdots, 	%% Kapiteleintrag, Seitenzahl ohne Punktlinie
+%	toc=flat, 						%% TOC in tabelarischer Form
+%	toc=graduated, 					%% TOC in hierarchischer Form
+%	toc=numberline, 				%% buendig mit nummeriertem Eintrag
+%	toc=nonumberline, 				%% buendig mit Nummer
+	toc=index, 						%% Index ins TOC (idxtotoc)
+	toc=listof, 					%% Abbildungs- und das Tabellenverzeichnis
+%	toc=listofnumbered, 			%% Abbildungs- und das Tabellenverzeichnis mit Nummer
+%	toc=sectionentrywithdots, 		%% Abschnittseintrag mit Punktlinie
+%	toc=sectionentrywithoutdots, 	%% Abschnittseintrag ohne Punktlinie
+%%------------------------------------------------------------------------------
+%	chapterprefix=true, 			%% Default: false
+%	appendixprefix=true, 			%% Default: false
+] {scrreprt} 					%% Dokumentklasse [scrartcl|scrreprt|scrbook]
+
 %%==============================================================================
 %% Document metadata:
 %%==============================================================================
